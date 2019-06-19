@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.francisco.characters.ui.fragment.FeedFragment"
+        android:label="@string/characters_label"
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_feedFragment_to_comicsFragment2"
+            app:destination="@id/comicsFragment2"
+            app:launchSingleTop="false"
+            app:popUpTo="@+id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicsFragment2"
+        android:name="com.francisco.characters.ui.fragment.ComicsFragment"
+        android:label="@string/comics_label"
+        tools:layout="@layout/fragment_comics" >
+        <argument
+            android:name="characterId"
+            app:argType="long" />
+    </fragment>
+</navigation>

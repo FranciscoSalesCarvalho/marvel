@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Characters</string>
+
+    <string name="author_name" formatted="false">Anonymous</string>
+    <string name="characters_label">Characters</string>
+    <string name="comics_label">Comics</string>
+</resources>

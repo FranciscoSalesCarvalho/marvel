@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="FeedItemBinding" />
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_large"
+        android:paddingTop="@dimen/padding">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding"
+            android:paddingTop="@dimen/padding">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginRight="@dimen/margin">
+
+                <com.an.customfontview.CustomTextView
+                    android:id="@+id/item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/font_xmedium"
+                    app:textFontPath="fonts/gt_medium.otf" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <com.an.customfontview.CustomTextView
+            android:id="@+id/item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_xsmall"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_large"
+            android:lineSpacingExtra="2dp"
+            android:paddingLeft="@dimen/padding"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/font_xmedium"
+            android:visibility="gone"
+            app:textFontPath="fonts/gt_medium.otf" />
+
+        <ImageView
+            android:id="@+id/item_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/feed_image_height"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginBottom="@dimen/margin_small"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_xsmall"
+            android:background="@color/color_line" />
+
+    </LinearLayout>
+</layout>
