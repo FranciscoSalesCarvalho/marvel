@@ -4,9 +4,11 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
@@ -68,9 +70,11 @@ public class PhotoGalleryDialog extends DialogFragment {
 
         configPhotoGallery(images);
 
-        return new AlertDialog.Builder(getActivity())
+        AlertDialog dialog = new AlertDialog.Builder(getActivity())
                 .setView(binding.getRoot())
                 .create();
+
+        return dialog;
     }
 
     private void configPhotoGallery(List<String> images) {

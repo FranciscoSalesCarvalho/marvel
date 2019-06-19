@@ -32,6 +32,7 @@ public class ComicsFragment extends Fragment {
         viewmodel = ViewModelProviders.of(this).get(ComicsViewModel.class);
 
         binding.setLifecycleOwner(this);
+        binding.setViewmodel(viewmodel);
 
         final ComicsFragmentArgs args = ComicsFragmentArgs.fromBundle(getArguments());
 

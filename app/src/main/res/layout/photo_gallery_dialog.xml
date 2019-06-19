@@ -6,15 +6,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:minHeight="@dimen/gallery_dialog_min_height"
         tools:context=".ui.fragment.ComicsFragment">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/photo_gallery"
             android:layout_width="0dp"
-            android:layout_height="@dimen/gallery_container_height"
+            android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/dots"
