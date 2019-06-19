@@ -4,4 +4,5 @@
     <string name="author_name" formatted="false">Anonymous</string>
     <string name="characters_label">Characters</string>
     <string name="comics_label">Comics</string>
+    <string name="network_err">Fetching Data failed</string>
 </resources>

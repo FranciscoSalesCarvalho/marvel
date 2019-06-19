@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,8 @@ import com.francisco.characters.R;
 import com.francisco.characters.databinding.FragmentFeedBinding;
 import com.francisco.characters.ui.adapter.FeedListAdapter;
 import com.francisco.characters.ui.viewmodel.FeedViewModel;
+import com.francisco.characters.utill.NetworkState;
+import com.google.android.material.snackbar.Snackbar;
 
 public class FeedFragment extends Fragment {
 
@@ -40,8 +43,26 @@ public class FeedFragment extends Fragment {
         feedViewModel.getArticleLiveData().observe(this, pagedList ->
                 adapter.submitList(pagedList));
 
-        feedViewModel.getNetworkState().observe(this, networkState ->
-                adapter.setNetworkState(networkState));
+        feedViewModel.getNetworkState().observe(this, networkState -> {
+
+            if (networkState.getStatus().equals(NetworkState.Status.RUNNING)) {
+                binding.progressBar.setVisibility(View.VISIBLE);
+            } else {
+                binding.progressBar.setVisibility(View.GONE);
+            }
+
+            if (networkState.getStatus().equals(NetworkState.Status.FAILED)) {
+                Snackbar.make(
+                        getView().getRootView(),
+                        getString(R.string.network_err),
+                        Snackbar.LENGTH_LONG
+                ).show();
+
+                return;
+            }
+            adapter.setNetworkState(networkState);
+        });
+
 
         binding.listFeed.setAdapter(adapter);
 
