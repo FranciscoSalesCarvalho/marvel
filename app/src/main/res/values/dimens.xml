@@ -79,5 +79,5 @@
     <dimen name="progress_bar_margin_start">20dp</dimen>
     <dimen name="waiting_text_margin_start">10dp</dimen>
     <dimen name="waiting_layout_padding_top_bottom">20dp</dimen>
-    <dimen name="gallery_dialog_min_height">500</dimen>
+    <dimen name="gallery_dialog_min_height">500dp</dimen>
 </resources>
